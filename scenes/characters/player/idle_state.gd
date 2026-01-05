@@ -1,6 +1,6 @@
 extends NodeState
 
-@export var player: CharacterBody2D
+@export var player: Player
 @export var animated_sprite_2d: AnimatedSprite2D
 
 func _on_process(_delta : float) -> void:
@@ -24,7 +24,15 @@ func _on_next_transitions() -> void:
 	
 	if GameInputEvent.is_movement_input():
 		transition.emit("Walk")
-
+		
+	if player.current_tool == DataTypes.Tools.AxeWood && GameInputEvent.use_tool():
+		transition.emit("Chopping")
+	
+	if player.current_tool == DataTypes.Tools.TillGround && GameInputEvent.use_tool():
+		transition.emit("Tilling")
+		
+	if player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvent.use_tool():
+		transition.emit("Watering")
 
 func _on_enter() -> void:
 	pass
