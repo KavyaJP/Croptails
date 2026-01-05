@@ -1,0 +1,40 @@
+# Godot-specific files
+.godot/
+
+# Import cache
+.import/
+
+# Mono / C#
+.mono/
+*.csproj
+*.sln
+*.user
+*.dll
+*.pdb
+
+# Build outputs
+bin/
+build/
+dist/
+exports/
+
+# Godot temporary files
+*.tmp
+*.temp
+*.bak
+
+# Logs & crash dumps
+*.log
+crash.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+
+# Python / tools (if any)
+__pycache__/
