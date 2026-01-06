@@ -20,5 +20,8 @@ func on_max_damage_reached() -> void:
 
 func add_log_scene() -> void:
 	var log_instance = log_scene.instantiate() as Node2D
-	log_instance.global_position = global_position
+	var log_instance2 = log_scene.instantiate() as Node2D
+	log_instance.global_position = global_position + Vector2(0, -4)
+	log_instance2.global_position = global_position + Vector2(0, 4)
 	get_parent().add_child(log_instance)
+	get_parent().add_child(log_instance2)
