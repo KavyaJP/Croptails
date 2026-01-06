@@ -11,7 +11,7 @@ func _ready() -> void:
 	damage_component.max_damage_reached.connect(on_max_damage_reached)
 
 func on_hurt(damage: int) -> void:
-	damage_component.apply_damage(damage) 
+	damage_component.apply_damage(damage)
 
 func on_max_damage_reached() -> void:
 	call_deferred("add_log_scene")
