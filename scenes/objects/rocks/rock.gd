@@ -12,6 +12,9 @@ func _ready() -> void:
 
 func on_hurt(damage: int) -> void:
 	damage_component.apply_damage(damage)
+	material.set_shader_parameter("shake_intensity", 1.0)
+	await get_tree().create_timer(1.0).timeout
+	material.set_shader_parameter("shake_intensity", 0.0)
 
 # signal from damage_compoenent that tells us that our object is now ready to break and collected.
 func on_max_damage_reached() -> void:
