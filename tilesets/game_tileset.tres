@@ -481,20 +481,20 @@ texture = ExtResource("4_phr0v")
 8:4/0 = 0
 8:2/size_in_atlas = Vector2i(1, 2)
 8:2/0 = 0
+8:2/0/y_sort_origin = 8
 3:0/size_in_atlas = Vector2i(2, 2)
 3:0/0 = 0
-1:0/size_in_atlas = Vector2i(2, 2)
-1:0/0 = 0
-0:0/size_in_atlas = Vector2i(1, 2)
-0:0/0 = 0
+3:0/0/y_sort_origin = 8
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, 14, 4, 14, 4, 8, -4, 8)
+0:3/0 = 0
+1:3/0 = 0
 0:4/size_in_atlas = Vector2i(2, 1)
 0:4/0 = 0
 2:4/size_in_atlas = Vector2i(3, 1)
 2:4/0 = 0
-0:3/0 = 0
-1:3/0 = 0
 
 [resource]
+physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass Terrain"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
