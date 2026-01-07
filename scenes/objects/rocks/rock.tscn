@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwcqdeqg2myun"]
+
+[ext_resource type="Texture2D" uid="uid://o2nrs4lxpydc" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_70ahf"]
+[ext_resource type="PackedScene" uid="uid://iw6ss4ln5i0p" path="res://scenes/components/hurt_component.tscn" id="2_aw33s"]
+[ext_resource type="Script" uid="uid://c31hvvq7pqdev" path="res://scenes/objects/rocks/rock.gd" id="2_f5itc"]
+[ext_resource type="PackedScene" uid="uid://csdxbnarg0twl" path="res://scenes/components/damage_component.tscn" id="3_msy0l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_70ahf"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aw33s"]
+radius = 6.0827627
+
+[node name="Rock" type="Sprite2D"]
+position = Vector2(0, -3)
+texture = ExtResource("1_70ahf")
+region_enabled = true
+region_rect = Rect2(128, 16, 16, 16)
+script = ExtResource("2_f5itc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_70ahf")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_aw33s")]
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+shape = SubResource("CircleShape2D_aw33s")
+debug_color = Color(0.91905177, 0.22777525, 0.4372776, 0.41960785)
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_msy0l")]
+max_damage = 6
