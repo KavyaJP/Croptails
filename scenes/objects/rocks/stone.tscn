@@ -12,6 +12,8 @@ region_enabled = true
 region_rect = Rect2(112, 16, 16, 16)
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_k7uky")]
+y_sort_enabled = true
+collectable_name = "Stone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 position = Vector2(-1, -2)
